@@ -1,0 +1,25 @@
+ <h2><%= simple_format(@blog.title) %></h2>
+<div class ="containts">
+  <div class="content_post">
+        <%= simple_format(@blog.text) %>
+        <span class="article_submitter">
+        <%= "投稿者:" + @blog.name %></span>
+
+            <div class="bottom-contents">
+              <%= button_to '編集', "/blogers/#{@blog.id}/edit", method: :get %>
+       <div id="delete_alert">
+          <%= button_to '削除', "/blogers/#{@blog.id}", method: :delete %>
+      </div>
+      <script>
+  $('#delete_alert').click(function(){
+    if(confirm('本当に削除しますか？')){
+    }else{
+        location.href = 'index.html.erb';
+      }
+  });
+</script>
+</script>
+       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+  </div>

@@ -1,0 +1,28 @@
+
+ <div class="rand_message"><%= simple_format(@word.word) %></div>
+<div class="contents_row" >
+  <% @blogs.each do |blog| %>
+<span class="word"></span>
+  <span class="name"><%= blog.name %></span>
+    <div class="edit_box"><%= button_to " 詳細", bloger_path(blog.id), method: :get %></div>
+      <div class="message_box"><p><%= simple_format(blog.title) %></p></div>
+    <% end %>
+  <div class="bottom-contents">
+    <%= button_to "投稿する", {controller: 'blogers', action: 'new'}, {method: :get} %>
+    <%= button_to "新規登録", new_user_registration_path,method: :get, class: 'get' %>
+    <%= button_to "ログイン", new_user_session_path, method: :get,class: 'get' %>
+    <div id="log_out">
+    <%= button_to "ログアウト",destroy_user_session_path, method: :delete %>
+  </div>
+    <script>
+      $('#log_out').on('click', function() {
+      alert("ログアウトしました");
+      });
+    </script>
+  </div>
+</div>
+<% breadcrumb :blogers %>
+<br><br>
+<div class="page">
+<%= paginate(@blogs) %>
+</div>

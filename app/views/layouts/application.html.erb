@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>iwabro</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="./main.js"></script>
+  </head>
+  <body>
+    <header class="main">
+      <p>iwablo</p>
+    </header>
+    <div class="contents">
+      <div class="box">
+    </div>
+
+  <footer></footer>
+    <%= yield %>
+  </body>
+</html>
+
